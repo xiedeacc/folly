@@ -19,9 +19,7 @@ cc_library(
     ),
     hdrs = glob(
         [
-            "folly/*.h",
             "folly/**/*.h",
-            "folly/experimental/*.h",
         ],
         exclude = [
             "folly/test/**/*.h",
@@ -31,12 +29,18 @@ cc_library(
     ),
     copts = [
         "-isystem .",
-        "-std=gnu++1z",
+        "-std=c++17",
         "-fPIC",
         "-finput-charset=UTF-8",
         "-fsigned-char",
         "-fopenmp",
         "-faligned-new",
+        "-fcoroutines",
+        "-msse4.2",
+        "-mpclmul",
+        "-mavx",
+        "-mavx2",
+        "-msse2",
         "-Wall",
         "-Wno-deprecated",
         "-Wno-deprecated-declarations",
@@ -46,7 +50,13 @@ cc_library(
         "-Wunused-result",
         "-Wshadow-compatible-local",
         "-Wno-noexcept-type",
-        "-mpclmul",
+    ],
+    includes = [
+        "external/com_github_google_snappy",
+        "external/com_github_libevent_libevent",
+        "external/double-conversion",
+        "external/libunwind",
+        "external/zlib",
     ],
     linkopts = [
         "-pthread",
@@ -61,13 +71,16 @@ cc_library(
         "@com_github_gflags_gflags//:gflags",
         "@com_github_glog_glog//:glog",
         "@com_github_google_snappy//:snappy",
+        "@com_github_libevent_libevent//:libevent",
         "@double-conversion//:double-conversion",
         "@jemalloc",
-        #"@openssl//:ssl",
+        "@libunwind//:unwind",
+        "@openssl//:ssl",
         "@org_bzip_bzip2//:libbzip2",
         "@org_lzma_lzma//:liblzma",
         "@zlib",
     ],
+    alwayslink = True,
 )
 
 #cc_library(
