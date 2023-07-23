@@ -28,7 +28,6 @@ cc_library(
         ],
     ),
     copts = [
-        "-isystem .",
         "-std=c++17",
         "-fPIC",
         "-finput-charset=UTF-8",
