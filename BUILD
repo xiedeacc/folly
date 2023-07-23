@@ -29,7 +29,7 @@ cc_library(
     ),
     copts = [
         "-isystem .",
-        "-std=c++17",
+        "-std=gnu++1z",
         "-fPIC",
         "-finput-charset=UTF-8",
         "-fsigned-char",
@@ -99,7 +99,7 @@ cc_library(
         "folly/Benchmark.h",
     ],
     copts = [
-        "-std=c++17",
+        "-std=gnu++1z",
         "-isystem .",
         "-fPIC",
         "-finput-charset=UTF-8",

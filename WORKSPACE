@@ -303,6 +303,16 @@ http_archive(
     ],
 )
 
+# conflict with libunwind compile with dwarf
+#http_archive(
+#name = "libdwarf",
+#sha256 = "0aba911b95bfdfe9af2543d3696244d71f18595376011111f95d2158fd7d6ba0",
+#strip_prefix = "libdwarf-0da1734dfafcf0756c14e8ae6ee257310ed1c9b5",
+#urls = [
+#"https://github.com/xiedeacc/libdwarf/archive/0da1734dfafcf0756c14e8ae6ee257310ed1c9b5.tar.gz",
+#],
+#)
+
 http_archive(
     name = "com_github_nelhage_rules_boost",
     repo_mapping = {
