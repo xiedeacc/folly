@@ -191,10 +191,10 @@ http_archive(
 
 http_archive(
     name = "org_bzip_bzip2",
-    sha256 = "07ee29c0b78a1fb4990392efcb2ea8c262f9032ead993088007287e53c3fd41f",
-    strip_prefix = "bzip2-b0dd89a039dc3ebdf643818591aa98cfc5b37cfc",
+    sha256 = "3da1097a8bad376860c6c675d9841dbb083f6459cee605e86f24978de079d143",
+    strip_prefix = "bzip2-67a2430bf9f180e50c2bc50bb1fcc69155105328",
     urls = [
-        "https://github.com/xiedeacc/bzip2/archive/b0dd89a039dc3ebdf643818591aa98cfc5b37cfc.tar.gz",
+        "https://github.com/xiedeacc/bzip2/archive/67a2430bf9f180e50c2bc50bb1fcc69155105328.tar.gz",
     ],
 )
 
@@ -209,10 +209,10 @@ http_archive(
 
 http_archive(
     name = "com_github_facebook_zstd",
-    sha256 = "dfeafb135eb509ddcbae083b65f62ea0b2c0f194f54f37e7e7bb5be6630b2790",
-    strip_prefix = "zstd-e6480811105a1f034bdfc99c8f7ffcf87b020c75",
+    sha256 = "e58ec647b3792c4e640ece396445f39c19a7b93c062e3ac8bc1ef3b7132369e2",
+    strip_prefix = "zstd-df71f5eeadfacb8ac5ec139ea8b274a23b12dd0c",
     urls = [
-        "https://github.com/xiedeacc/zstd/archive/e6480811105a1f034bdfc99c8f7ffcf87b020c75.tar.gz",
+        "https://github.com/xiedeacc/zstd/archive/df71f5eeadfacb8ac5ec139ea8b274a23b12dd0c.tar.gz",
     ],
 )
 
@@ -226,6 +226,17 @@ http_archive(
     strip_prefix = "openssl-1.1.1u",
     urls = [
         "https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1u/openssl-1.1.1u.tar.gz",
+    ],
+)
+
+http_archive(
+    name = "libsodium",
+    repo_mapping = {
+    },
+    sha256 = "45faee83cb2221927123da8394c9b567f55f2d1e3c466b916e85ecd08c4b6c96",
+    strip_prefix = "libsodium-c9244999525f980dd810ae9bb5c542aeeac92ecc",
+    urls = [
+        "https://github.com/xiedeacc/libsodium/archive/c9244999525f980dd810ae9bb5c542aeeac92ecc.tar.gz",
     ],
 )
 
@@ -292,6 +303,18 @@ http_archive(
     ],
 )
 
+http_archive(
+    name = "com_github_nelhage_rules_boost",
+    repo_mapping = {
+        "@boringssl": "@openssl",
+    },
+    sha256 = "a6df3aea9e1c69933e4d554cd81d553a030f752f7af1a93ac14730cc10e550f4",
+    strip_prefix = "rules_boost-45ed6bf51f659c7db830fd15ddd4495dadc5afd1",
+    urls = [
+        "https://github.com/nelhage/rules_boost/archive/45ed6bf51f659c7db830fd15ddd4495dadc5afd1.tar.gz",
+    ],
+)
+
 load("@bazel_skylib//lib:versions.bzl", "versions")
 
 versions.check("5.2.0")
@@ -302,6 +325,7 @@ load("@rules_perl//perl:deps.bzl", "perl_register_toolchains")
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
 load("@com_grail_bazel_compdb//:deps.bzl", "bazel_compdb_deps")
+load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
 
 rules_foreign_cc_dependencies()
 
@@ -318,3 +342,5 @@ go_register_toolchains(version = "1.18")
 rules_pkg_dependencies()
 
 bazel_compdb_deps()
+
+boost_deps()
