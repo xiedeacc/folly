@@ -92,28 +92,32 @@ cc_library(
     alwayslink = True,
 )
 
-#cc_library(
-#name = "follybenchmark",
-#srcs = ["folly/Benchmark.cpp"],
-#copts = [
-#"-std=gnu++1z",
-#"-fPIC",
-#"-finput-charset=UTF-8",
-#"-fsigned-char",
-#"-fopenmp",
-#"-faligned-new",
-#"-Wall",
-#"-Wno-deprecated",
-#"-Wno-deprecated-declarations",
-#"-Wno-sign-compare",
-#"-Wno-unused",
-#"-Wunused-label",
-#"-Wunused-result",
-#"-Wshadow-compatible-local",
-#"-Wno-noexcept-type",
-#"-mpclmul",
-#],
-#deps = [
-#":folly",
-#],
-#)
+cc_library(
+    name = "follybenchmark",
+    srcs = ["folly/Benchmark.cpp"],
+    hdrs = [
+        "folly/Benchmark.h",
+    ],
+    copts = [
+        "-std=c++17",
+        "-isystem .",
+        "-fPIC",
+        "-finput-charset=UTF-8",
+        "-fsigned-char",
+        "-fopenmp",
+        "-faligned-new",
+        "-Wall",
+        "-Wno-deprecated",
+        "-Wno-deprecated-declarations",
+        "-Wno-sign-compare",
+        "-Wno-unused",
+        "-Wunused-label",
+        "-Wunused-result",
+        "-Wshadow-compatible-local",
+        "-Wno-noexcept-type",
+        "-mpclmul",
+    ],
+    deps = [
+        ":folly",
+    ],
+)
