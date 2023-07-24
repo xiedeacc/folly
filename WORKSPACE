@@ -296,10 +296,10 @@ http_archive(
 
 http_archive(
     name = "libunwind",
-    sha256 = "4b3a6671b2a4267598d52394189685a5c8df6bbc57f1db21478720a0c7584f9b",
-    strip_prefix = "libunwind-4a0424557a1d8db576855a0743f9f3778633764c",
+    sha256 = "34db8d5e910376712e2ac5f3098dcace5fc1d4f3b84823bd8d67376a765b41b1",
+    strip_prefix = "libunwind-2cfcc7ad6cefc777ea5c2ae861f089c2391166d0",
     urls = [
-        "https://github.com/xiedeacc/libunwind/archive/4a0424557a1d8db576855a0743f9f3778633764c.tar.gz",
+        "https://github.com/xiedeacc/libunwind/archive/2cfcc7ad6cefc777ea5c2ae861f089c2391166d0.tar.gz",
     ],
 )
 
