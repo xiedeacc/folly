@@ -296,22 +296,21 @@ http_archive(
 
 http_archive(
     name = "libunwind",
-    sha256 = "0aba911b95bfdfe9af2543d3696244d71f18595376011111f95d2158fd7d6ba9",
-    strip_prefix = "libunwind-541c687a193976b323eb9d28958c81cc08e8b35f",
+    sha256 = "4b3a6671b2a4267598d52394189685a5c8df6bbc57f1db21478720a0c7584f9b",
+    strip_prefix = "libunwind-4a0424557a1d8db576855a0743f9f3778633764c",
     urls = [
-        "https://github.com/xiedeacc/libunwind/archive/541c687a193976b323eb9d28958c81cc08e8b35f.tar.gz",
+        "https://github.com/xiedeacc/libunwind/archive/4a0424557a1d8db576855a0743f9f3778633764c.tar.gz",
     ],
 )
 
-# conflict with libunwind compile with dwarf
-#http_archive(
-#name = "libdwarf",
-#sha256 = "0aba911b95bfdfe9af2543d3696244d71f18595376011111f95d2158fd7d6ba0",
-#strip_prefix = "libdwarf-0da1734dfafcf0756c14e8ae6ee257310ed1c9b5",
-#urls = [
-#"https://github.com/xiedeacc/libdwarf/archive/0da1734dfafcf0756c14e8ae6ee257310ed1c9b5.tar.gz",
-#],
-#)
+http_archive(
+    name = "libdwarf",
+    sha256 = "b85f5b7ba91ad61355bff6725fdc859d6a1ed6c126776428cafc5b3abd07a034",
+    strip_prefix = "libdwarf-0da1734dfafcf0756c14e8ae6ee257310ed1c9b5",
+    urls = [
+        "https://github.com/xiedeacc/libdwarf/archive/0da1734dfafcf0756c14e8ae6ee257310ed1c9b5.tar.gz",
+    ],
+)
 
 http_archive(
     name = "com_github_nelhage_rules_boost",

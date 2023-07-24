@@ -82,6 +82,7 @@ cc_library(
         "@com_github_libevent_libevent//:libevent",
         "@double-conversion//:double-conversion",
         "@jemalloc",
+        "@libdwarf//:dwarf",
         "@libsodium",
         "@libunwind//:unwind",
         "@lzma",
