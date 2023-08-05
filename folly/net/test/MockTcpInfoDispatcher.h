@@ -16,16 +16,22 @@
 
 #pragma once
 
-#include <Python.h>
+#include <folly/net/TcpInfoDispatcher.h>
+#include <folly/portability/GMock.h>
 
-#include <memory>
-#include <string>
+namespace folly {
+namespace test {
 
-#include <folly/io/IOBuf.h>
+class MockTcpInfoDispatcher : public folly::TcpInfoDispatcher {
+ public:
+  MOCK_METHOD(
+      (folly::Expected<TcpInfo, std::errc>),
+      initFromFd,
+      (const NetworkSocket&,
+       const TcpInfo::LookupOptions&,
+       folly::netops::Dispatcher&,
+       TcpInfo::IoctlDispatcher&));
+};
 
-namespace folly::python {
-
-std::string to_uppercase_string_cpp(PyObject* iobuf);
-std::string to_uppercase_string_cpp_heap(PyObject* o_iobuf);
-
-} // namespace folly::python
+} // namespace test
+} // namespace folly

@@ -14,18 +14,13 @@
  * limitations under the License.
  */
 
-#pragma once
+#include <folly/executors/QueuedImmediateExecutor.h>
+#include <folly/synchronization/HazptrDomain.h>
 
-#include <Python.h>
+namespace folly::detail {
 
-#include <memory>
-#include <string>
+folly::Executor::KeepAlive<> hazptr_get_default_executor() {
+  return &folly::QueuedImmediateExecutor::instance();
+}
 
-#include <folly/io/IOBuf.h>
-
-namespace folly::python {
-
-std::string to_uppercase_string_cpp(PyObject* iobuf);
-std::string to_uppercase_string_cpp_heap(PyObject* o_iobuf);
-
-} // namespace folly::python
+} // namespace folly::detail
