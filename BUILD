@@ -5,12 +5,14 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "folly",
     srcs = glob(
-        ["folly/**/*.cpp"],
+        [
+            "folly/**/*.cpp",
+            "folly/**/*.S",
+        ],
         exclude = [
             "folly/docs/**",
             "folly/build/**",
             "folly/logging/example/**",
-            "folly/Benchmark.cpp",
             "folly/test/**/*.cpp",
             "folly/**/test/**/*.cpp",
             "folly/**/*Test.cpp",
@@ -97,34 +99,4 @@ cc_library(
         "@zlib",
     ],
     alwayslink = True,
-)
-
-cc_library(
-    name = "follybenchmark",
-    srcs = ["folly/Benchmark.cpp"],
-    hdrs = [
-        "folly/Benchmark.h",
-    ],
-    copts = [
-        "-std=gnu++1z",
-        "-isystem .",
-        "-fPIC",
-        "-finput-charset=UTF-8",
-        "-fsigned-char",
-        "-fopenmp",
-        "-faligned-new",
-        "-Wall",
-        "-Wno-deprecated",
-        "-Wno-deprecated-declarations",
-        "-Wno-sign-compare",
-        "-Wno-unused",
-        "-Wunused-label",
-        "-Wunused-result",
-        "-Wshadow-compatible-local",
-        "-Wno-noexcept-type",
-        "-mpclmul",
-    ],
-    deps = [
-        ":folly",
-    ],
 )
