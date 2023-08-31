@@ -163,47 +163,29 @@ http_archive(
 )
 
 http_archive(
-    name = "jemalloc",
-    sha256 = "7c2e08eda0980c5249e2c4e73f56296da3754e0c5b55c3ffabbd0409bde568bf",
-    strip_prefix = "jemalloc-14397d2ebc59298bdabb11b31a1366aed380ac81",
-    urls = [
-        "https://github.com/xiedeacc/jemalloc/archive/14397d2ebc59298bdabb11b31a1366aed380ac81.tar.gz",
-    ],
-)
-
-http_archive(
     name = "lzma",
-    sha256 = "a5f59d0bd6bd0c0dc38bfd7fb4f1463358a562a812f1735d2bc9425f8169d0a7",
-    strip_prefix = "xz-6814fd3df040e5fb985a8d8b6b89c5fd5e53f9f7",
+    sha256 = "e684e1c3652f5ce760930d5073ae867243578d6ad056aef4072d6d02316b9f6a",
+    strip_prefix = "xz-515d98d55120baca0ebd55563a993ba5b102b38b",
     urls = [
-        "https://github.com/xiedeacc/xz/archive/6814fd3df040e5fb985a8d8b6b89c5fd5e53f9f7.tar.gz",
+        "https://github.com/xiedeacc/xz/archive/515d98d55120baca0ebd55563a993ba5b102b38b.tar.gz",
     ],
 )
 
 http_archive(
     name = "zlib",
-    sha256 = "46e7ef872204839e74ffed8cf9004b296a80caba756e21ac546881c727af4e5f",
-    strip_prefix = "zlib-50c820653b6f0c93e4d9da3141f946a98a113fd0",
+    sha256 = "6fbf43f4658bc6048f3f4beca2f7cf7cbfc9ad1380335208875866d279b41528",
+    strip_prefix = "zlib-ff644470d69a58407f49eaaa6236faef6786000a",
     urls = [
-        "https://github.com/xiedeacc/zlib/archive/50c820653b6f0c93e4d9da3141f946a98a113fd0.tar.gz",
-    ],
-)
-
-http_archive(
-    name = "org_bzip_bzip2",
-    sha256 = "3da1097a8bad376860c6c675d9841dbb083f6459cee605e86f24978de079d143",
-    strip_prefix = "bzip2-67a2430bf9f180e50c2bc50bb1fcc69155105328",
-    urls = [
-        "https://github.com/xiedeacc/bzip2/archive/67a2430bf9f180e50c2bc50bb1fcc69155105328.tar.gz",
+        "https://github.com/xiedeacc/zlib/archive/ff644470d69a58407f49eaaa6236faef6786000a.tar.gz",
     ],
 )
 
 http_archive(
     name = "lz4",
-    sha256 = "8ab81fafb7ee6cddaf23fd1de4898a405c6edd739e20fe60818874bb7d59df29",
-    strip_prefix = "lz4-72b88d853b968827356394ea25b902adf8d707d0",
+    sha256 = "0812303b3290c0c030eceb96238bdad29322d13ecae402c0189416d44534bfac",
+    strip_prefix = "lz4-4970cbe91f3df254c235160f5fe4041a37c30a2d",
     urls = [
-        "https://github.com/xiedeacc/lz4/archive/72b88d853b968827356394ea25b902adf8d707d0.tar.gz",
+        "https://github.com/xiedeacc/lz4/archive/4970cbe91f3df254c235160f5fe4041a37c30a2d.tar.gz",
     ],
 )
 
@@ -237,6 +219,15 @@ http_archive(
     strip_prefix = "libsodium-c9244999525f980dd810ae9bb5c542aeeac92ecc",
     urls = [
         "https://github.com/xiedeacc/libsodium/archive/c9244999525f980dd810ae9bb5c542aeeac92ecc.tar.gz",
+    ],
+)
+
+http_archive(
+    name = "jemalloc",
+    sha256 = "7c2e08eda0980c5249e2c4e73f56296da3754e0c5b55c3ffabbd0409bde568bf",
+    strip_prefix = "jemalloc-14397d2ebc59298bdabb11b31a1366aed380ac81",
+    urls = [
+        "https://github.com/xiedeacc/jemalloc/archive/14397d2ebc59298bdabb11b31a1366aed380ac81.tar.gz",
     ],
 )
 
